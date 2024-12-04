@@ -21,22 +21,26 @@ const Container = styled.div`
 
 function App() {
   const [activeProfile, setActiveProfile] = useState(profileData[0]);
-
+  const [loggedUser, setLoggedUser] = useState(null);
   return (
     <Container>
-      <Header activeProfile={activeProfile} />
+      <Header activeProfile={activeProfile} loggedUser={loggedUser} />
       <Switch>
         <Route exact path="/">
-          <Redirect to="/login" />
+          {loggedUser ? <Redirect to="/welcome" /> : <Redirect to="/login" />}
         </Route>
         <Route path="/login">
-          <Login />
+          <Login setLoggedUser={setLoggedUser} />
         </Route>
         <Route path="/welcome">
-          <Welcome setActiveProfile={setActiveProfile} />
+          {loggedUser ? (
+            <Welcome setActiveProfile={setActiveProfile} />
+          ) : (
+            <Redirect to="/login" />
+          )}
         </Route>
         <Route path="/browse">
-          <Browse />
+          {loggedUser ? <Browse /> : <Redirect to="/login" />}
         </Route>
       </Switch>
     </Container>

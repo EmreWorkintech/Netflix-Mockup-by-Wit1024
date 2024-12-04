@@ -1,9 +1,34 @@
 export const profileData = [
-  { avatar: "https://picsum.photos/200?1", title: "Emre", id: 1 },
-  { avatar: "https://picsum.photos/200?2", title: "Prenses", id: 2 },
-  { avatar: "https://picsum.photos/200?3", title: "Duru", id: 3 },
-  { avatar: "https://picsum.photos/200?4", title: "Gamze", id: 4 },
-  { avatar: "https://picsum.photos/200?5", title: "Türkan", id: 5 },
+  {
+    avatar:
+      "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-2fg93funipvqfs9i.webp",
+    title: "Emre",
+    id: 1,
+  },
+  {
+    avatar:
+      "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-62wgyitks6f4l79m.webp",
+    title: "Prenses",
+    id: 2,
+  },
+  {
+    avatar:
+      "https://wallpapers.com/images/high/netflix-profile-pictures-5yup5hd2i60x7ew3.webp",
+    title: "Duru",
+    id: 3,
+  },
+  {
+    avatar:
+      "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp",
+    title: "Gamze",
+    id: 4,
+  },
+  {
+    avatar:
+      "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-w3lqr61qe57e9yt8.webp",
+    title: "Türkan",
+    id: 5,
+  },
 ];
 
 export const movies = [

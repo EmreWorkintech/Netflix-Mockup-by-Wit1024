@@ -31,7 +31,7 @@ function Hero() {
       <InfoContainer>
         <Info>Buraya film bilgileri gelecek</Info>
       </InfoContainer>
-      <Video autoPlay muted>
+      <Video autoPlay muted loop>
         <source src={asaf} type="video/mp4" />
         Your browser does not support the video tag.
       </Video>

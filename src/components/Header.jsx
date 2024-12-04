@@ -8,7 +8,8 @@ const Container = styled.header`
   right: 0;
   padding: 0.5rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: ${(props) =>
+    props.loggedUser ? "flex-end" : "space-between"};
   align-items: center;
   gap: 2rem;
   z-index: 100;
@@ -17,6 +18,7 @@ const Container = styled.header`
 const Logo = styled.div`
   color: red;
   font-size: 2rem;
+  font-weight: bold;
 `;
 
 const NavMenu = styled.nav`
@@ -42,18 +44,24 @@ const User = styled.img`
 `;
 
 function Header(props) {
-  const { activeProfile } = props;
+  const { activeProfile, loggedUser } = props;
 
   return (
-    <Container>
+    <Container loggedUser={loggedUser}>
       <Logo>NETFLIX</Logo>
-      <NavMenu>
-        <Link to="/login">Login</Link>
-        <Link to="/welcome">Welcome</Link>
-        <Link to="/browse">Browse</Link>
-      </NavMenu>
+      {loggedUser && (
+        <NavMenu>
+          <Link to="/login">Login</Link>
+          <Link to="/welcome">Welcome</Link>
+          <Link to="/browse">Browse</Link>
+        </NavMenu>
+      )}
       <UserPanel>
-        <User src={activeProfile.avatar} />
+        {loggedUser ? (
+          <User src={activeProfile.avatar} />
+        ) : (
+          <Link to="/signup">Signup</Link>
+        )}
       </UserPanel>
     </Container>
   );

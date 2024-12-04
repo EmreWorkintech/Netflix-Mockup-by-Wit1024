@@ -2,21 +2,20 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
 
-const Card = styled.div`
-  padding: 0.4rem;
-  width: 180px;
-  cursor: pointer;
-  border-radius: 0.5rem;
-`;
-
 const Avatar = styled.img`
   width: 100%;
   border-radius: 0.5rem;
   box-sizing: border-box;
   border: 3px solid rgba(0, 0, 0, 0);
+`;
 
-  //TODO: card üzerine gelince avatar için border olacak.
-  &:hover {
+const Card = styled.div`
+  padding: 0.4rem;
+  width: 180px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+
+  &:hover ${Avatar} {
     border: 3px solid lightgray;
   }
 `;
